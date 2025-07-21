@@ -47,6 +47,12 @@ open class GXUserNotificationsProviderOneSignal: NSObject, GXUserNotificationsPr
 	
 	public final var remoteAppDelegate: any GXRemoteNotificationsProviderAppDelegateProtocol { self }
 	
+	open func registerForUserNotificationTypes(types: UInt) {
+		OneSignal.Notifications.requestPermission { granted in
+			GXUserNotificationsManager.onDidRegisterUserNotificationSettings()
+		}
+	}
+	
 	// MARK: Remote
 	
 	open func registerForPushNotifications() -> Void {
