@@ -49,7 +49,9 @@ open class GXUserNotificationsProviderOneSignal: NSObject, GXUserNotificationsPr
 	
 	open func registerForUserNotificationTypes(types: UInt) {
 		OneSignal.Notifications.requestPermission { granted in
-			GXUserNotificationsManager.onDidRegisterUserNotificationSettings()
+			if granted {
+				GXUserNotificationsManager.onDidRegisterUserNotificationSettings()
+			}
 		}
 	}
 	
