@@ -1,7 +1,7 @@
 // swift-tools-version: 5.9
 import PackageDescription
 
-let GX_FC_LAST_VERSION = Version("3.0.0-beta")
+let GX_FC_LAST_VERSION = Version("4.0.0-beta")
 
 let package = Package(
 	name: "OneSignalNotificationsProvider",
@@ -13,7 +13,7 @@ let package = Package(
 	dependencies: [
 		.package(url: "https://github.com/GeneXus-SwiftPackages/GXCoreBL.git", .upToNextMajor(from: GX_FC_LAST_VERSION)),
 		.package(url: "https://github.com/GeneXus-SwiftPackages/GXCoreModule_SD_Notifications.git", .upToNextMajor(from: GX_FC_LAST_VERSION)),
-		.package(url: "https://github.com/OneSignal/OneSignal-XCFramework", .upToNextMajor(from: "5.2.9"))
+		.package(url: "https://github.com/OneSignal/OneSignal-XCFramework", .upToNextMajor(from: "5.2.14"))
 	],
 	targets: [
 		.target(name: "OneSignalNotificationProvider",
